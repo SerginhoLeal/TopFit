@@ -3,7 +3,7 @@ import Routes from './routes';
 
 import {AulasProvider} from "./Context";
 
-const Feed = () => {
+const Aulas = () => {
   return (
     <AulasProvider>
       <Routes />
@@ -11,4 +11,4 @@ const Feed = () => {
   );
 }
 
-export default Feed;
+export default Aulas;
