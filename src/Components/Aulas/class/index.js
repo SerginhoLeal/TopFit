@@ -21,7 +21,7 @@ const myClass = () => {
         :(
           myClass.map(Aulas =>(
             
-            <View style={[styles.box,{marginBottom:20}]} key={Aulas._id}>
+            <View style={styles.box} key={Aulas._id}>
               
               <View style={{flex:1,flexDirection:'row',justifyContent:'space-between',}}>
             
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     height:'20%',
     borderRadius:10,
     marginTop:'0.5%',
-    marginBottom:'0.5%',
+    marginBottom:'2%',
     backgroundColor:'#2c2c2c',
   },
   buttonConf:{

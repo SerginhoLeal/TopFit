@@ -46,9 +46,6 @@ export const AulasProvider = ({children}) => {
       }
     }).then(res => res.json())
     .then(res => {
-      if(res.error == "Limite_de_aulas"){
-        Alert.alert("Limite de aulas","Você só pode marcar uma aula por vez")
-      }
       loadingLessons()
       myClasses()
     })
@@ -63,7 +60,7 @@ export const AulasProvider = ({children}) => {
       }
     }).then(res => res.json())
     .then(res => {
-      setDocs(res)
+      setDocs(res.docs)
     })
   }
 
