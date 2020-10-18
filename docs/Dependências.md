@@ -15,6 +15,8 @@
     - npm install --save react-native-text-input-mask
     - npm install @react-native-community/async-storage
     - npm install react-native-paper
+    - npm install react-native-modal-datetime-picker @react-native-community/datetimepicker
+    - npm install moment
     
 ```
 

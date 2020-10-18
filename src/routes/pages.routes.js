@@ -3,12 +3,10 @@ import React from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import {DrawerStyle} from '../StyledDrawer'
-
-import Home from '../Pages/Drawer/Home'
-import Settings from '../Pages/Drawer/Settings'
 
 import Feed from "../Pages/Tabs/Feed"
 import T_Casa from "../Pages/Tabs/T_Casa"
@@ -106,14 +104,25 @@ const routes = () => {
       
   )
 
+  // const DrawerBar = () => (
+  //   <Drawer.Navigator
+  //     drawerContent={skoa => <DrawerStyle {...skoa} />}//skoa para importa o estilo e o props
+  //   >
+  //     <Drawer.Screen name="Feed" component={TabNavigation} />
+  //   </Drawer.Navigator>
+  // )
+
+  // return (
+  //   <Stack.Navigator>
+  //     <Stack.Screen name="Feed" component={DrawerBar} />
+  //   </Stack.Navigator>
+  // );
+
   return (
     <Drawer.Navigator
       drawerContent={skoa => <DrawerStyle {...skoa} />}//skoa para importa o estilo e o props
     >
-
-      <Drawer.Screen name="Home" component={TabNavigation} />
-      <Drawer.Screen name="Settings" component={Settings} />
-
+      <Drawer.Screen name="Feed" component={TabNavigation} />
     </Drawer.Navigator>
   );
 }
