@@ -1,11 +1,15 @@
 import * as React from 'react';
 import {View} from 'react-native';
+import Feed_Headers from './headers'
 import Docs from "./docs";
 import MyClass from "./class";
 
 const Tabs = () => {
 
   return (
+    <>
+
+    <Feed_Headers />
 
     <View style={{flex:1, backgroundColor:'#000'}}>
 
@@ -19,6 +23,7 @@ const Tabs = () => {
 
     </View>
 
+  </>
   );
   
 }

@@ -51,16 +51,19 @@ export const AulasProvider = ({children}) => {
     })
   }
 
-  const loadingLessons = () => {
+  const loadingLessons = (getCalendar) => {
     fetch(`${localhost}/C7Ypo2iYtfLi8RrH1TRR`,{
-      method:'get',
+      method:'post',
       headers:{
         'Content-Type':'application/json',
         'Authorization':`Bearer ${token}`
-      }
+      },
+      body:JSON.stringify({
+        dateTime:getCalendar
+      })
     }).then(res => res.json())
     .then(res => {
-      setDocs(res.docs)
+      setDocs(res.getAllDateTime)
     })
   }
 

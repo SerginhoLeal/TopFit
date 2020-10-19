@@ -6,15 +6,30 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 
 import {useNavigation} from '@react-navigation/native'
 
-import DateTimePickerModal from "react-native-modal-datetime-picker";
+import DateTimePicker from "react-native-modal-datetime-picker";
+
+import {HooksAulasContext} from '../Context'
 
 const headers = () => {
+
+  const {loadingLessons} = HooksAulasContext();
+
   const navigation = useNavigation();
 
   const [isDatePickerVisible, setDatePickerVisibility] = React.useState(false);
 
   const handleConfirm = (date) => {
-    console.warn("A date has been picked: ", date);
+    const str = JSON.stringify(date)
+
+    const date_String = (str.substr(0,11));
+
+    function replaceSpecialChars(str){
+      str = str.replace(/["]/,"");
+      return str.replace(); 
+    }
+
+    loadingLessons(replaceSpecialChars(date_String))
+
     setDatePickerVisibility(false)
   };
 
@@ -31,11 +46,12 @@ const headers = () => {
         <Icon name="calendar-alt" size={25} color="#fff" />
       </TouchableOpacity>
 
-      <DateTimePickerModal
+      <DateTimePicker
         isVisible={isDatePickerVisible}
         mode="date"
         onConfirm={handleConfirm}
         onCancel={()=>setDatePickerVisibility(false)}
+        minimumDate={Date.now()}
       />
 
     </View>

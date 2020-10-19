@@ -7,6 +7,7 @@ import {myHooksContext} from "../../../Context/authContext";
 import { ProgressBar, Colors } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import { View, Text, StatusBar, StyleSheet, TouchableOpacity} from 'react-native';
+import moment from 'moment'
 
 import {HooksAulasContext} from '../Context'
 
@@ -25,7 +26,11 @@ const myClass = (props) => {
             
                 <View style={{flex:1,justifyContent:'space-evenly'}}>
                   <Text style={styles.title}>{Aulas.aulaTipo}</Text>
-                  <Text style={styles.horas}>Hoje às {Aulas.horas}</Text>
+
+                  <Text style={styles.horas}>
+                    {/* {moment().add(1, 'days').calendar()}  */}
+                    Hoje às {Aulas.horas}</Text>
+
                   <View style={{flexDirection:'row'}}>
                     <View style={{width:"14%", height:"100%", backgroundColor:'#fff', borderRadius:50}} />
                     <Text style={styles.horas}> Prof: {Aulas.professor}</Text>
